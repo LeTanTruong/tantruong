@@ -1,4 +1,6 @@
+//giao diện 9
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main(List<String> args) {
   runApp(const MaterialApp(
@@ -16,169 +18,249 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: false,
+        backgroundColor: Colors.white,
+        elevation: 0,
         title: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Zendvn',
-              style: TextStyle(color: Colors.blue),
-            ),
-            Text(
-              'Study Flutter',
-              style: TextStyle(color: Colors.black),
+              'Training',
+              style: TextStyle(
+                color: Color.fromARGB(255, 3, 3, 3),
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
+              ),
             ),
           ],
         ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 10),
-            child: Icon(
-              Icons.menu,
-              color: Colors.black,
-            ),
-          )
-        ],
-        backgroundColor: Colors.white,
-        elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
         child: Column(
           children: [
-            Container(
-              //padding: const EdgeInsets.all(20.0),
-              width: double.infinity,
-              height: 180,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.vertical(
-                  bottom: Radius.circular(20.0),
+            Row(
+              children: [
+                const Expanded(
+                  flex: 4,
+                  child: Text(
+                    'Vel of  fb dzsb fzxd',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 8, 8, 8),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                    ),
+                  ),
                 ),
+                Expanded(
+                  flex: 1,
+                  child: Text(
+                    'conga tre',
+                    style: GoogleFonts.dancingScript(
+                        fontSize: 30,
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                const Icon(
+                  Icons.arrow_right_alt,
+                  size: 30,
+                  color: Color.fromARGB(255, 8, 6, 5),
+                ),
+              ],
+            ),
+            Container(
+              width: double.infinity,
+              height: 200,
+              decoration: const BoxDecoration(
+                color: Colors.amber,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(
+                    7,
+                  ),
+                  topRight: Radius.circular(
+                    27,
+                  ),
+                  bottomLeft: Radius.circular(
+                    17,
+                  ),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 10,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'conga tre111',
+                      style: GoogleFonts.dancingScript(
+                          fontSize: 30,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(
+                        right: 80,
+                      ),
+                      child: Text(
+                        'fd bvf gb b fcxg dfgcfdgfg acdsv df v fdb x  b dfb x',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 253, 253, 253),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 90,
+                    ),
+                    Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Icon(
+                          Icons.login,
+                          size: 30,
+                          color: Color.fromARGB(255, 253, 253, 253),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(
+                            top: 5,
+                          ),
+
+                          ///dancingScript
+                          child: Text(
+                            'ZendVn',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 7, 23, 255),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 190,
+                        ),
+                        Container(
+                          width: 40,
+                          height: 30,
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromARGB(255, 97, 95, 95),
+                                offset: Offset(2, 2),
+                                blurRadius: 1, //độ nhòe
+                              )
+                            ],
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                          ),
+                          child: const Icon(
+                            Icons.settings,
+                            size: 20,
+                            color: Color.fromARGB(255, 231, 247, 8),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 10,
               ),
               child: Container(
+                width: double.infinity,
+                height: 100,
                 decoration: const BoxDecoration(
+                  color: Colors.amber,
                   borderRadius: BorderRadius.all(
-                    Radius.circular(20.0),
-                  ),
-                  gradient: LinearGradient(
-                    colors: [
-                      Color.fromARGB(255, 252, 250, 250),
-                      Color.fromARGB(255, 160, 229, 241)
-                    ],
-                    begin: Alignment.topCenter, //topLift trên trái
-                    end: Alignment.bottomCenter, //bottomRight dưới phải
+                    Radius.circular(
+                      20,
+                    ),
                   ),
                 ),
               ),
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment
-                  .spaceBetween, //mainAxisAlignment giãn cách 2 bên ngang Row
-              children: [
-                Text(
-                  'Categories',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  'More...',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              height: 180,
-              child: ListView.separated(
-                //padding: const EdgeInsets.symmetric(horizontal: 10),
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    width: 125,
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(20.0),
-                      ),
-                      gradient: LinearGradient(
-                        colors: [
-                          Color.fromARGB(255, 252, 250, 250),
-                          Color.fromARGB(255, 143, 217, 230)
-                        ],
-                        begin: Alignment.topCenter, //topLift trên trái
-                        end: Alignment.bottomCenter, //bottomRight dưới phải
-                      ),
+            const Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 10,
+              ),
+              child: Row(
+                children: [
+                  Text(
+                    'Quialfv dfb df bfbd',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 12, 11, 11),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
                     ),
-                  );
-                },
-                separatorBuilder: (BuildContext context, int index) {
-                  return const SizedBox(
-                    width: 10,
-                  );
-                },
-                itemCount: 10,
+                  ),
+                ],
               ),
             ),
-            ////////////////////////////////////////////////////////////////
-            /////////////////////////////////////////////////////////////////
-            /////////////////////////////////////////////////////////////////
-            const Row(
-              mainAxisAlignment: MainAxisAlignment
-                  .spaceBetween, //mainAxisAlignment giãn cách 2 bên ngang Row
-              children: [
-                Text(
-                  'News',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                  ),
+            Expanded(
+              child: GridView(
+                scrollDirection: Axis.vertical,
+                //cuộn thẳng đứng GridView
+                shrinkWrap: true,
+                //physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 15,
+                  crossAxisSpacing: 15,
+                  childAspectRatio: 1 / 1.2,
                 ),
-                Text(
-                  'More...',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              height: 180,
-              child: ListView.separated(
-                //padding: const EdgeInsets.symmetric(horizontal: 10),
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    width: 125,
+                children: List.generate(
+                  10,
+                  (index) => Container(
                     decoration: const BoxDecoration(
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(255, 85, 83, 83),
+                          offset: Offset(-2, -2),
+                          blurRadius: 1, //độ nhòe
+                        )
+                      ],
                       borderRadius: BorderRadius.all(
-                        Radius.circular(20.0),
-                      ),
-                      gradient: LinearGradient(
-                        colors: [
-                          Color.fromARGB(255, 252, 250, 250),
-                          Color.fromARGB(255, 143, 217, 230)
-                        ],
-                        begin: Alignment.topCenter, //topLift trên trái
-                        end: Alignment.bottomCenter, //bottomRight dưới phải
+                        Radius.circular(
+                          20,
+                        ),
                       ),
                     ),
-                  );
-                },
-                separatorBuilder: (BuildContext context, int index) {
-                  return const SizedBox(
-                    width: 10,
-                  );
-                },
-                itemCount: 10,
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 20,
+                      height: 20,
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 171, 227, 231),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(
+                            20,
+                          ),
+                        ),
+                      ),
+                      child: const Text(
+                        'Quialfv dfb df bfbdbf gb fgb  fgb f b tr b fb d bfd g rs rt r s t rt ',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 12, 11, 11),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                        textAlign: TextAlign.center, //cho chữ nằm giữa
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
           ],
