@@ -2,12 +2,13 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 class Item extends ChangeNotifier {
+  ////2228 json
   int id;
   String name;
   String image;
   String description;
   bool isStar = false;
-
+  bool isFavorite = false; ////3331 nhấn 1 lần ra đỏ nhấn 2 lần thì bỏ
   Item({
     required this.id,
     required this.name,
@@ -16,6 +17,12 @@ class Item extends ChangeNotifier {
   });
   void toggleIsStar() {
     isStar = !isStar;
+    notifyListeners();
+  }
+
+  void toggleIsFavorite() {
+    ////3332 nhấn 1 lần ra đỏ nhấn 2 lần thì bỏ
+    isFavorite = !isFavorite; ////3332 nhấn 1 lần ra đỏ nhấn 2 lần thì bỏ
     notifyListeners();
   }
 
