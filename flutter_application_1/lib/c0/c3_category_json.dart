@@ -6,24 +6,12 @@ class Category extends ChangeNotifier {
   String id;
   String name;
   String image;
-  //String radioButtonUnchecked;
-
-  bool isRadioButtonUnchecked = false;
 
   Category({
     required this.id,
     required this.name,
     required this.image,
-    //  required this.radioButtonUnchecked,
   });
-
-  void toggleIsRadioButtonUnchecked() {
-    isRadioButtonUnchecked = !isRadioButtonUnchecked;
-    // radioButtonUnchecked = isRadioButtonUnchecked
-    //     ? (int.parse(radioButtonUnchecked) + 1).toString()
-    //     : (int.parse(radioButtonUnchecked) - 1).toString();
-    // notifyListeners();
-  }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -38,7 +26,6 @@ class Category extends ChangeNotifier {
       id: map['id'] as String,
       name: map['name'] as String,
       image: map['image'] as String,
-      //  radioButtonUnchecked: map['radioButtonUnchecked'] as String,
     );
   }
 

@@ -1,47 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/c0/c4_provider_category.dart';
+import 'package:flutter_application_1/a0_next_page/gridview/gridview_provider_a5.dart';
+import 'package:provider/provider.dart';
 
-class Body_safeArea extends StatefulWidget {
-  const Body_safeArea({
-    super.key,
-  });
+class HomeBodyGirdviewA3 extends StatefulWidget {
+  const HomeBodyGirdviewA3({super.key});
 
   @override
-  State<Body_safeArea> createState() => _Body_safeAreaState();
+  State<HomeBodyGirdviewA3> createState() => _HomeBodyA3State();
 }
 
-class _Body_safeAreaState extends State<Body_safeArea> {
-  late Future readData;
+class _HomeBodyA3State extends State<HomeBodyGirdviewA3> {
+  late Future girdviewFuture; ////5
+
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    readData = ProviderCategory().readJson();
+  void didChangeDependencies() {
+    girdviewFuture = Provider.of<GridviewProvider>(context).getGirdview();
+    super.didChangeDependencies();
   }
 
+  ////5
   bool checkbox = false;
   @override
   Widget build(BuildContext context) {
-    // print('body');
-    //
-    return FutureBuilder(
-        future: readData,
-        ////5
-
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          print(snapshot);
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          } ////5
-          var categoryItem = snapshot.hasData ? snapshot.data : []; ////5
-          //
-          return snapshot.hasData
-              ? ////6
-              SafeArea(
-                  ////1 GridView
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: GridView(
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Color.fromARGB(255, 31, 179, 216),
+      ),
+      body: SafeArea(
+        ////1 GridView
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: FutureBuilder(
+            future: girdviewFuture,
+            initialData: [],
+            builder: (context, asyncData) {
+              final girdviewData = asyncData.data! as List;
+              return asyncData.hasData
+                  ? GridView(
+                      ////2 GridView
                       //cuộn thẳng đứng GridView
                       //shrinkWrap: true,
                       gridDelegate:
@@ -52,16 +49,15 @@ class _Body_safeAreaState extends State<Body_safeArea> {
                         childAspectRatio: 1.2 / 0.5,
                       ),
                       children: List.generate(
-                        categoryItem.length,
+                        girdviewData.length,
                         (index) => Container(
                           alignment: Alignment.center,
                           width: 20,
                           height: 20,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: AssetImage(
-                                categoryItem[index].image, ////8
-                              ),
+                              image: AssetImage(girdviewData[index]
+                                  .image), //'assets/images/mau7.jpg'
                               fit: BoxFit.fill,
                             ),
                             borderRadius: BorderRadius.all(
@@ -78,27 +74,19 @@ class _Body_safeAreaState extends State<Body_safeArea> {
                               children: [
                                 Expanded(
                                   child: Text(
-                                    categoryItem[index].name.toString(), ////8
+                                    girdviewData[index].image,
                                     style: TextStyle(
-                                        fontSize: 40, color: Colors.white),
+                                        fontSize: 40,
+                                        color: Colors.white,
+                                        overflow: TextOverflow.ellipsis),
                                   ),
                                 ),
-                                // Icon(
-                                //   Icons.radio_button_unchecked,
-                                //   size: 30,
-                                //   color: Colors.white,
-                                // ),
                                 StatefulBuilder(
                                   builder: (context, setState2) {
                                     return Checkbox(
-                                      //  activeColor: const Color.fromARGB(
-                                      //    255, 255, 255, 255),
-
                                       fillColor: MaterialStatePropertyAll(
-                                          const Color.fromARGB(
-                                              255, 255, 70, 70)),
+                                          Color.fromARGB(255, 248, 208, 27)),
                                       shape: CircleBorder(),
-                                      //  shape:const CircleAvatar(child: Icon(Icons.abc_outlined,size: 40,color: const Color.fromARGB(255, 211, 181, 92),),),
                                       value: checkbox,
                                       onChanged: (value) {
                                         setState2(() {
@@ -113,17 +101,14 @@ class _Body_safeAreaState extends State<Body_safeArea> {
                           ),
                         ),
                       ),
-                    ),
-                  ),
-                )
-              : Center(
-                  ////7
-                  child: Text(
-                    'Not Data',
-                    style: TextStyle(
-                        fontSize: 20, color: Color.fromARGB(255, 240, 73, 73)),
-                  ),
-                );
-        });
+                    )
+                  : Center(
+                      child: Text('not data'),
+                    );
+            },
+          ),
+        ),
+      ),
+    );
   }
 }
