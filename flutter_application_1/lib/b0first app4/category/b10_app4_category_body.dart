@@ -21,15 +21,17 @@ class CategoryBody extends StatelessWidget {
               child: GridTileBar(
                 backgroundColor: Colors.black45,
                 title: Text('Iphone 12 Pro'),
+                //
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Tempora et aliquam amet id.',
+                      style: TextStyle(fontSize: 20),
                     ),
-                    SizedBox(
-                      height: 4,
-                    ),
+                    //
+                    SizedBox(height: 4),
+                    //
                     Text(
                       '20.000 VNĐ',
                       style: TextStyle(color: Colors.yellow, fontSize: 16),
@@ -40,7 +42,7 @@ class CategoryBody extends StatelessWidget {
               ),
             ),
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 image: DecorationImage(
                   fit: BoxFit.cover,

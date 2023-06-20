@@ -53,6 +53,7 @@ class _HomeCategoryState extends State<HomeCategory> {
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
                 ////11125 chuyển trang
+
                 onTap: () {
                   Navigator.pushNamed(
                       context, CategoryPage.routerName, ////11127 chuyển trang
@@ -79,9 +80,9 @@ class _HomeCategoryState extends State<HomeCategory> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 10,
-                    ),
+                    ////
+                    SizedBox(height: 10),
+                    ////
                     Text(categoryData[index].name), ////11124
                   ],
                 ),
