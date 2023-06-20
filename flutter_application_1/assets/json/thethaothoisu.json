@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "Thế Giới",
+        "slug": "the-gioi",
+        "link": "https://vnexpress.net/rss/the-gioi.rss",
+        "created_at": "2021-04-02T04:06:23.000000Z",
+        "updated_at": "2021-04-02T04:06:23.000000Z"
+    },
+    {
+        "id": 2,
+        "name": "Thời Sự",
+        "slug": "thoi-su",
+        "link": "https://vnexpress.net/rss/thoi-su.rss",
+        "created_at": "2021-04-02T11:07:59.000000Z",
+        "updated_at": "2021-04-02T11:07:59.000000Z"
+    },
+    {
+        "id": 3,
+        "name": "Kinh Doanh",
+        "slug": "kinh-doanh",
+        "link": "https://vnexpress.net/rss/kinh-doanh.rss",
+        "created_at": "2021-04-02T11:10:02.000000Z",
+        "updated_at": "2021-04-02T11:10:02.000000Z"
+    },
+    {
+        "id": 5,
+        "name": "Giải Trí",
+        "slug": "giai-tri",
+        "link": "https://vnexpress.net/rss/giai-tri.rss",
+        "created_at": "2021-04-02T12:01:01.000000Z",
+        "updated_at": "2021-04-02T12:01:01.000000Z"
+    },
+    {
+        "id": 6,
+        "name": "Thể Thao",
+        "slug": "the-thao",
+        "link": "https://vnexpress.net/rss/the-thao.rss",
+        "created_at": "2021-04-02T12:01:28.000000Z",
+        "updated_at": "2021-04-02T12:01:28.000000Z"
+    },
+    {
+        "id": 7,
+        "name": "Pháp Luật",
+        "slug": "phap-luat",
+        "link": "https://vnexpress.net/rss/phap-luat.rss",
+        "created_at": "2021-04-02T12:01:47.000000Z",
+        "updated_at": "2021-04-02T12:01:47.000000Z"
+    },
+    {
+        "id": 8,
+        "name": "Giáo Dục",
+        "slug": "giao-duc",
+        "link": "https://vnexpress.net/rss/giao-duc.rss",
+        "created_at": "2021-04-02T12:02:22.000000Z",
+        "updated_at": "2021-04-02T12:02:22.000000Z"
+    },
+    {
+        "id": 9,
+        "name": "Sức Khỏe",
+        "slug": "suc-khoe",
+        "link": "https://vnexpress.net/rss/suc-khoe.rss",
+        "created_at": "2021-04-02T12:02:45.000000Z",
+        "updated_at": "2021-04-02T12:02:45.000000Z"
+    },
+    {
+        "id": 10,
+        "name": "Đời Sống",
+        "slug": "doi-song",
+        "link": "https://vnexpress.net/rss/doi-song.rss",
+        "created_at": "2021-04-02T12:03:06.000000Z",
+        "updated_at": "2021-04-02T12:03:06.000000Z"
+    },
+    {
+        "id": 11,
+        "name": "Du Lịch",
+        "slug": "du-lich",
+        "link": "https://vnexpress.net/rss/du-lich.rss",
+        "created_at": "2021-04-02T12:03:40.000000Z",
+        "updated_at": "2021-04-02T12:03:40.000000Z"
+    }
+]
