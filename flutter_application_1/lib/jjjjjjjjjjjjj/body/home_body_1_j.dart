@@ -16,9 +16,7 @@ class HomeBody extends StatelessWidget {
       backgroundColor: Colors.white,
       drawer: Drawer(
         child: ContainerDrawer(),
-        //  backgroundColor: Colors.lime,
       ),
-      ////drawer
       appBar: AppBar(
         //automaticallyImplyLeading: false,
         elevation: 0,
@@ -28,8 +26,6 @@ class HomeBody extends StatelessWidget {
           ////bên trái
           padding: const EdgeInsets.all(6.0),
           child: Container(
-            //width: 70,
-            //height: 50,
             decoration: const BoxDecoration(
               color: Colors.amber,
               borderRadius: BorderRadius.all(

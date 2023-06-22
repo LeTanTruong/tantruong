@@ -53,16 +53,12 @@ class _HomeCategoryState extends State<HomeCategory> {
           ),
           FutureBuilder(
               ////5 FutureBuilder API
-              future: getDataFuture, ////8 future: getDataFuture,
-              //initialData: [],
+              future: getDataFuture,
               builder: (context, snapshot) {
-                ////5 FutureBuilder API ////5
-                ////
-                //var itemModelItem = snapshot.hasData ? snapshot.data : [];
                 if (snapshot.hasData) {
                   List<ItemModel> data = snapshot.data as List<ItemModel>;
                   return ListView.separated(
-                    itemCount: data.length, ////11 length
+                    itemCount: data.length,
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     separatorBuilder: (BuildContext context, int index) {

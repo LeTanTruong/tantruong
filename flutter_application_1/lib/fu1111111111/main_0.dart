@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/fu1111111111/home/f3_home_product.dart';
+import 'package:flutter_application_1/fu1111111111/home/f6_home_product2_page.dart';
+import 'package:flutter_application_1/fu1111111111/home/home_page_1.dart';
+import 'package:flutter_application_1/fu1111111111/provider/f5_product_provider.dart';
+import 'package:flutter_application_1/fu1111111111/provider/f7_product2_provider.dart';
 import 'package:flutter_application_1/fu1111111111/repositorires/item_repository_5.dart';
-import 'package:flutter_application_1/jjjjjjjjjjjjj/provider/j9_provider_product_read.dart';
 import 'package:provider/provider.dart';
-import 'home/home_page_1.dart';
 
 void main(List<String> args) {
   runApp(
@@ -11,6 +13,7 @@ void main(List<String> args) {
       providers: [
         ChangeNotifierProvider(create: (_) => ItemRepository()),
         ChangeNotifierProvider(create: (_) => ProviderProduct()),
+        ChangeNotifierProvider(create: (_) => ProviderProduct2()),
       ],
 
       ///////////////////////
@@ -18,8 +21,9 @@ void main(List<String> args) {
         debugShowCheckedModeBanner: false,
         initialRoute: '/', ////1111 chuyển trang đen
         routes: {
-          HomePage.routerName: ((context) => HomePage()),
-          HomeProduct.routerName: (context) => HomeProduct(),
+          HomePage.routerName: ((context) => const HomePage()),
+          HomeProduct2.routerName: (context) => HomeProduct2(),
+          HomeProduct.routerName: (context) => const HomeProduct(),
         },
         //home: MyApp(),
       ),
@@ -41,6 +45,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return HomePage();
+    return const HomePage();
   }
 }

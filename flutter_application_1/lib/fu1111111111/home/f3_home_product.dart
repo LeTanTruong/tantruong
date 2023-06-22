@@ -20,18 +20,12 @@ class _HomeProductState extends State<HomeProduct> {
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
-    //getDataFuture = context.read<ProviderProduct>().getAll();
-    //getDataFuture = context.read<ProviderProduct>().getAll();
     getDataFuture = ProviderProduct().getAll();
   }
 
   bool checkbox = false;
   @override
   Widget build(BuildContext context) {
-    // final params = (ModalRoute.of(context)?.settings.arguments ??
-    //     <String, dynamic>{}) as Map;
-    // print(params['title']);
-
     return Scaffold(
       //backgroundColor: Colors.orange,
       appBar: AppBar(
@@ -118,15 +112,7 @@ class _HomeProductState extends State<HomeProduct> {
                       ),
                     ),
                   )
-                : Center(
-                    ////7
-                    // child: Text(
-                    //   'Not Dasta',
-                    //   style: TextStyle(
-                    //       fontSize: 20,
-                    //       color: Color.fromARGB(255, 240, 73, 73)),
-                    // ),
-                    );
+                : Center();
           },
         ),
       ),

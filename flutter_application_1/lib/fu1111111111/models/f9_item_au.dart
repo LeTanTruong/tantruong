@@ -1,23 +1,22 @@
-//widget\item_widget.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/fu1111111111/home/f6_home_product2_page.dart';
+import 'package:flutter_application_1/fu1111111111/home/f3_home_product.dart';
 
-class ItemWidget extends StatefulWidget {
+class ItemAu extends StatefulWidget {
   String title;
   String description;
   String link;
-  ItemWidget({
-    super.key,
+  ItemAu({
+    Key? key,
     required this.title,
     required this.description,
     required this.link,
-  });
+  }) : super(key: key);
 
   @override
-  State<ItemWidget> createState() => _ItemWidgetState();
+  State<ItemAu> createState() => _ItemAuState();
 }
 
-class _ItemWidgetState extends State<ItemWidget> {
+class _ItemAuState extends State<ItemAu> {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -26,7 +25,7 @@ class _ItemWidgetState extends State<ItemWidget> {
         onTap: () {
           Navigator.pushNamed(
             context,
-            HomeProduct2.routerName,
+            HomeProduct.routerName,
           );
         },
         child: Row(
@@ -46,13 +45,12 @@ class _ItemWidgetState extends State<ItemWidget> {
               flex: 2,
               child: Container(
                 //  color: Colors.amber,
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      //title:
                       widget.title,
                       style: const TextStyle(
                         fontSize: 20,
