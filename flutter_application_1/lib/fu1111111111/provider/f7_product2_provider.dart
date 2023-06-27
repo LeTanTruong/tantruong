@@ -1,3 +1,4 @@
+//provider\f7_product2_provider.dart
 import 'dart:convert';
 //import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +14,10 @@ class ProviderProduct2 extends ChangeNotifier {
       final response = await http.get(Uri.parse(url));
       final jsonData = jsonDecode(response.body);
       List<Product2> data = List<Product2>.from(
-          jsonData.map((cate) => Product2.fromJson(jsonEncode(cate)))).toList();
+          jsonData.map((i) => Product2.fromJson(jsonEncode(i)))).toList();
       return data;
     } catch (e) {
       return Future.error(e);
-    } //try xử lý dữ liệu //catch xử lý lỗi
+    }
   }
 }

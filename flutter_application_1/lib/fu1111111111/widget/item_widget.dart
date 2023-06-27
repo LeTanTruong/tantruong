@@ -23,12 +23,12 @@ class _ItemWidgetState extends State<ItemWidget> {
     return AspectRatio(
       aspectRatio: 3, ////kích thức
       child: InkWell(
-        onTap: () {
+        onTap: (() {
           Navigator.pushNamed(
             context,
-            HomeProduct2.routerName,
+            HomeProduct2.routeName,
           );
-        },
+        }),
         child: Row(
           children: [
             Expanded(

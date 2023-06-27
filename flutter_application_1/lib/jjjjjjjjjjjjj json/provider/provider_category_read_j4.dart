@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; //rootBundle
 import 'dart:convert';
 
-import 'package:flutter_application_1/jjjjjjjjjjjjj/category/j5_category_json.dart';
+import 'package:flutter_application_1/jjjjjjjjjjjjj%20json/category/j5_category_json.dart';
 
 class ProviderCategory extends ChangeNotifier {
   ////3

@@ -4,6 +4,7 @@ import 'package:flutter_application_1/fu1111111111/drawer/container_drawer.dart'
 import 'home_category_2.dart';
 
 class HomePage extends StatefulWidget {
+  ///trang chính gốc
   static const routerName = '/';
   const HomePage({
     super.key,
@@ -84,11 +85,11 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HomeCategory(
-                title: 'Thể Thao',
+                title: 'Khoa học',
                 //  description: '',
               ),
               HomeCategory(
-                title: 'Thời sự',
+                title: 'Khoa học',
                 //  description: '',
               ),
               ////

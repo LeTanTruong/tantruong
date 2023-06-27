@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; //rootBundle
 import 'dart:convert';
 
-import 'package:flutter_application_1/jjjjjjjjjjjjj/product/j8_product_json.dart';
+import 'package:flutter_application_1/jjjjjjjjjjjjj%20json/product/j8_product_json.dart';
 
 class ProviderProduct extends ChangeNotifier {
   ////3

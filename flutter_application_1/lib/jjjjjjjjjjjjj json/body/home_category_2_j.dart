@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/jjjjjjjjjjjjj/body/j7_home_page_next1.dart';
-import 'package:flutter_application_1/jjjjjjjjjjjjj/provider/provider_category_read_j4.dart';
+import 'package:flutter_application_1/jjjjjjjjjjjjj%20json/body/j7_home_page_next1.dart';
+import 'package:flutter_application_1/jjjjjjjjjjjjj%20json/provider/provider_category_read_j4.dart';
 
 class HomeCategory extends StatefulWidget {
   String title;

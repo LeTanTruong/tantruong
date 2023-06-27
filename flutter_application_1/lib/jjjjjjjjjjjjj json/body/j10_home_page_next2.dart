@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/jjjjjjjjjjjjj/provider/12_provider_category2_read.dart';
+import 'package:flutter_application_1/jjjjjjjjjjjjj%20json/provider/12_provider_category2_read.dart';
 
 class HomePageNext2 extends StatefulWidget {
   static const routerName = '/HomePageNext2.routerName';

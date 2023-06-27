@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/fu1111111111/home/f3_home_product_page.dart';
 
 class ContainerDrawer2 extends StatelessWidget {
   const ContainerDrawer2({
@@ -10,7 +11,7 @@ class ContainerDrawer2 extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
             image: AssetImage(
               'assets/images/images1.jpg',
@@ -36,7 +37,7 @@ class ContainerDrawer2 extends StatelessWidget {
               ),
             ),
           ),
-          Center(
+          const Center(
             child: Text(
               'App Tin Tức',
               style: TextStyle(
@@ -50,52 +51,60 @@ class ContainerDrawer2 extends StatelessWidget {
           // SizedBox(height: 20),
           //
           Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Column(
-              //  mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Trang Chủ',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
+            padding: const EdgeInsets.all(20.0),
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  HomeProduct.routerName,
+                );
+              },
+              child: const Column(
+                //  mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Trang Chủ',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
                   ),
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                ),
-                SizedBox(height: 10),
-                Text(
-                  'Danh Mục',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
+                  SizedBox(height: 10),
+                  Text(
+                    'Danh Mục',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
                   ),
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                ),
-                SizedBox(height: 10),
-                Text(
-                  'Yêu Thích',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
+                  SizedBox(height: 10),
+                  Text(
+                    'Yêu Thích',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
                   ),
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                ),
-                SizedBox(height: 10),
-                Text(
-                  'Đã Xem',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
+                  SizedBox(height: 10),
+                  Text(
+                    'Đã Xem',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
                   ),
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                ),
-                SizedBox(height: 10),
-              ],
+                  SizedBox(height: 10),
+                ],
+              ),
             ),
           ),
         ],

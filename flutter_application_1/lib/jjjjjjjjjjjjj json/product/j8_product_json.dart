@@ -5,13 +5,11 @@ import 'package:flutter/material.dart';
 class Product extends ChangeNotifier {
   int id;
   String title;
-//  String view;
   String link;
   String description;
   Product({
     required this.id,
     required this.title,
-//    required this.view,
     required this.link,
     required this.description,
   });

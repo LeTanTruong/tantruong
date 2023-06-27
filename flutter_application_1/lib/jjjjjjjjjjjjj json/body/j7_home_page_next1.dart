@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/jjjjjjjjjjjjj/body/j10_home_page_next2.dart';
-import 'package:flutter_application_1/jjjjjjjjjjjjj/provider/j9_provider_product_read.dart';
+import 'package:flutter_application_1/jjjjjjjjjjjjj%20json/body/j10_home_page_next2.dart';
+import 'package:flutter_application_1/jjjjjjjjjjjjj%20json/provider/j9_provider_product_read.dart';
 
 class HomePageNext1 extends StatefulWidget {
   /////////////////////////////////////////////////////////////////////////////////////////////////

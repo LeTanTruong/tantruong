@@ -75,12 +75,7 @@ class _HomeCategoryState extends State<HomeCategory> {
                     },
                   );
                 } else {
-                  return Container(
-                      // child: Text(
-                      //   'no data',
-                      //   style: TextStyle(fontSize: 20, color: Colors.amber),
-                      // ),
-                      );
+                  return Center();
                 }
 
                 ////9 FutureBuilder

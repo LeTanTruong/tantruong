@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/jjjjjjjjjjjjj/body/home_category_2_j.dart';
-import 'package:flutter_application_1/jjjjjjjjjjjjj/drawer/j6_drawer.dart';
+import 'package:flutter_application_1/jjjjjjjjjjjjj%20json/body/home_category_2_j.dart';
+import 'package:flutter_application_1/jjjjjjjjjjjjj%20json/drawer/j6_drawer.dart';
 
 class HomeBody extends StatelessWidget {
   ////////////////////////////////////////////////////////////////////////////////////////////

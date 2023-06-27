@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/fu1111111111/home/f3_home_product.dart';
+import 'package:flutter_application_1/fu1111111111/home/f3_home_product_page.dart';
 import 'package:flutter_application_1/fu1111111111/home/f6_home_product2_page.dart';
+import 'package:flutter_application_1/fu1111111111/home/f9_home_product3_page.dart';
 import 'package:flutter_application_1/fu1111111111/home/home_page_1.dart';
 import 'package:flutter_application_1/fu1111111111/provider/f5_product_provider.dart';
 import 'package:flutter_application_1/fu1111111111/provider/f7_product2_provider.dart';
@@ -12,8 +13,8 @@ void main(List<String> args) {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ItemRepository()),
-        ChangeNotifierProvider(create: (_) => ProviderProduct()),
         ChangeNotifierProvider(create: (_) => ProviderProduct2()),
+        ChangeNotifierProvider(create: (_) => ProviderProduct()),
       ],
 
       ///////////////////////
@@ -22,8 +23,9 @@ void main(List<String> args) {
         initialRoute: '/', ////1111 chuyển trang đen
         routes: {
           HomePage.routerName: ((context) => const HomePage()),
-          HomeProduct2.routerName: (context) => HomeProduct2(),
-          HomeProduct.routerName: (context) => const HomeProduct(),
+          HomeProduct2.routeName: ((context) => const HomeProduct2()),
+          HomeProduct.routerName: ((context) => const HomeProduct()),
+          HomeProduct3.RouterName: ((context) => const HomeProduct3()),
         },
         //home: MyApp(),
       ),
