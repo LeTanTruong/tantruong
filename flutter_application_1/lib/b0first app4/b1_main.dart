@@ -3,34 +3,28 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'category/b8_app4_category_provider.dart';
-import 'category/b9_app4_category.dart';
-import 'b2_app4_home.dart';
-import 'slider/b5_app4_slider_provider.dart';
+import 'provider/b8_app4_category_provider_part2.dart';
+import 'category/b9_app4_category_page2_part1.dart';
+import 'b2_app4_home_part1.dart';
+import 'provider/b5_app4_slider_provider_part1.dart';
 
 void main(List<String> args) {
   runApp(
     MultiProvider(
-      ////1115 ChangeNotifierProvider
       providers: [
-        ////1115 ChangeNotifierProvider
         ChangeNotifierProvider(
-          ////1115 ChangeNotifierProvider
-          create: (_) => SliderProvider(), ////1115 ChangeNotifierProvider
-        ), ////1115 ChangeNotifierProvider
+          create: (_) => SliderProvider(),
+        ),
         ChangeNotifierProvider(
-          ////11118 ChangeNotifierProvider
-          create: (_) => CategoryProvider(), ////11118 ChangeNotifierProvider
+          create: (_) => CategoryProvider(),
         ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: HomePage.routerName, ////1111 routerName
+        initialRoute: HomePage.routerName,
         routes: {
-          ////1111 routerName
-          HomePage.routerName: (context) => HomePage(), ////1111 routerName
-          CategoryPage.routerName: (context) =>
-              CategoryPage(), ////11126 chuyển trang
+          HomePage.routerName: (context) => HomePage(),
+          CategoryPage.routerName: (context) => CategoryPage(),
         },
       ),
     ),
