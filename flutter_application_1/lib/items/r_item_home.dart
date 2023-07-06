@@ -1,16 +1,19 @@
-//items\h7_items2_page2_part1.dart
+//r4_items.dart
 import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
-class Items21 extends ChangeNotifier {
+class ItemHome extends ChangeNotifier {
   int id;
   String overview;
   String poster_path;
+  String original_title;
 
-  Items21({
+  ItemHome({
     required this.id,
     required this.overview,
     required this.poster_path,
+    required this.original_title,
   });
 
   Map<String, dynamic> toMap() {
@@ -18,19 +21,21 @@ class Items21 extends ChangeNotifier {
       'id': id,
       'overview': overview,
       'poster_path': poster_path,
+      'original_title': original_title,
     };
   }
 
-  factory Items21.fromMap(Map<String, dynamic> map) {
-    return Items21(
+  factory ItemHome.fromMap(Map<String, dynamic> map) {
+    return ItemHome(
       id: map['id'] as int,
       overview: map['overview'] as String,
       poster_path: map['poster_path'] as String,
+      original_title: map['original_title'] as String,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Items21.fromJson(String source) =>
-      Items21.fromMap(json.decode(source) as Map<String, dynamic>);
-}
+  factory ItemHome.fromJson(String source) =>
+      ItemHome.fromMap(json.decode(source) as Map<String, dynamic>);
+} ////2
