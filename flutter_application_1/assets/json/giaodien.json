@@ -2,41 +2,49 @@
     {
         "id": "c1",
         "name": "Thể Thao",
-        "image": "assets/images/mau1.jpg"
+        "image": "assets/images/mau1.jpg",
+        "favorite": "11"
     },
     {
         "id": "c2",
         "name": "Thời Sự",
-        "image": "assets/images/mau2.jpg"
+        "image": "assets/images/mau2.jpg",
+        "favorite": "141"
     },
     {
         "id": "c3",
         "name": "thể Thao",
-        "image": "assets/images/mau3.jpg"
+        "image": "assets/images/mau3.jpg",
+        "favorite": "23"
     },
     {
         "id": "c4",
         "name": "Thời Sự",
-        "image": "assets/images/mau4.jpg"
+        "image": "assets/images/mau4.jpg",
+        "favorite": "122"
     },
     {
         "id": "c5",
         "name": "Thể Thao",
-        "image": "assets/images/mau5.jpg"
+        "image": "assets/images/mau5.jpg",
+        "favorite": "12"
     },
     {
         "id": "c6",
         "name": "Thời Sự",
-        "image": "assets/images/mau6.jpg"
+        "image": "assets/images/mau6.jpg",
+        "favorite": "151"
     },
     {
         "id": "c7",
         "name": "Thể Thao",
-        "image": "assets/images/mau7.jpg"
+        "image": "assets/images/mau7.jpg",
+        "favorite": "131"
     },
     {
         "id": "c8",
         "name": "Thời Sự",
-        "image": "assets/images/mau8.jpg"
+        "image": "assets/images/mau8.jpg",
+        "favorite": "112"
     }
 ]
