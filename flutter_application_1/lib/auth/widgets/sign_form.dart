@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Pages/Bottom_Navigation_Bar_Screen.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/forgot_password_page.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/widgets/constants.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/widgets/form_error.dart';
+import 'package:flutter_application_1/pages/bottom_navigation_bar_screen.dart';
+import 'package:flutter_application_1/auth/page_auth/forgot_password_page.dart';
+import 'package:flutter_application_1/auth/widgets/form_error.dart';
+import 'package:flutter_application_1/constants.dart';
 
 class SignForm extends StatefulWidget {
   const SignForm({super.key});
@@ -12,11 +12,18 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
+  bool showEyes = false;
+
   bool isLoading = false;
+
   final formKey = GlobalKey<FormState>();
+
   late String email;
+
   late String password;
+
   bool remember = false;
+
   final List<String> errors = [];
 
   void addError({required String error}) {
@@ -43,13 +50,13 @@ class _SignFormState extends State<SignForm> {
         children: [
           ////email
           buildEmailFormField(),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ////password
           buildPasswordFormField(),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ////lỗi
           FormError(errors: errors),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ////remember and forgot password
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,7 +72,7 @@ class _SignFormState extends State<SignForm> {
                       });
                     },
                   ),
-                  Text("Remember me"),
+                  const Text("Remember me"),
                 ],
               ),
 
@@ -74,7 +81,7 @@ class _SignFormState extends State<SignForm> {
                 onTap: () {
                   Navigator.pushNamed(context, ForgotPasswordPage.routerName);
                 },
-                child: Text(
+                child: const Text(
                   "Forgot Password",
                   style: TextStyle(decoration: TextDecoration.underline),
                 ),
@@ -102,7 +109,7 @@ class _SignFormState extends State<SignForm> {
                 ),
                 backgroundColor: const Color.fromARGB(255, 7, 156, 255),
                 elevation: 0),
-            child: Text(
+            child: const Text(
               'SignIn',
               style: TextStyle(
                   fontSize: 25, color: Color.fromARGB(255, 255, 255, 255)),
@@ -136,7 +143,7 @@ class _SignFormState extends State<SignForm> {
         }
         return null;
       },
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: Color.fromARGB(255, 0, 0, 0),
@@ -167,6 +174,7 @@ class _SignFormState extends State<SignForm> {
 ////password
   TextFormField buildPasswordFormField() {
     return TextFormField(
+      obscureText: !showEyes,
       keyboardType: TextInputType.multiline,
       onSaved: (newValue) => password = newValue!,
       onChanged: (value) {
@@ -188,17 +196,17 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
-        enabledBorder: OutlineInputBorder(
+        enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: Color.fromARGB(255, 0, 0, 0),
           ),
         ),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: Color.fromARGB(255, 0, 0, 0),
           ),
         ),
-        border: OutlineInputBorder(
+        border: const OutlineInputBorder(
           borderSide: BorderSide(
             color: Color.fromARGB(255, 0, 0, 0),
           ),
@@ -206,7 +214,23 @@ class _SignFormState extends State<SignForm> {
         floatingLabelBehavior: FloatingLabelBehavior.always,
         labelText: "Password",
         hintText: "Enter your Password",
-        prefixIcon: Icon(
+        suffixIcon: InkWell(
+          onTap: () {
+            setState(() {
+              showEyes = !showEyes;
+            });
+          },
+          child: showEyes
+              ? const Icon(
+                  Icons.visibility,
+                  color: Colors.amber,
+                )
+              : const Icon(
+                  Icons.visibility_off,
+                  color: Colors.amber,
+                ),
+        ),
+        prefixIcon: const Icon(
           Icons.email,
           color: Colors.amber,
           size: 20,

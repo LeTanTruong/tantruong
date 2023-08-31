@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Pages/homes/searchs/book.dart';
-import 'package:flutter_application_1/Pages/homes/searchs/book_page.dart';
+import 'package:flutter_application_1/Pages/walks/walk_home_page.dart';
 
 class SearchHome extends StatefulWidget {
   static const routerName = "/SearchHome.routerName";
@@ -15,16 +15,23 @@ class SearchHome extends StatefulWidget {
 class _SearchHomeState extends State<SearchHome> {
   final controller = TextEditingController();
   List<Book> books = allBooks;
-  String titleText = "search";
+  String titleText = "Search";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // appBar: AppBar(
-        //   automaticallyImplyLeading: true,
-        //   centerTitle: true,
-        //   title: Text(titleText),
-        // ),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          elevation: 0,
+          backgroundColor: Colors.orange,
+          centerTitle: true,
+          title: Text(
+            titleText,
+            style: TextStyle(
+              fontSize: 30,
+            ),
+          ),
+        ),
         body: Column(
           children: [
             Container(
@@ -46,7 +53,7 @@ class _SearchHomeState extends State<SearchHome> {
                     icon: Icon(Icons.clear),
                   ),
 
-                  hintText: "Book Title",
+                  hintText: "Search",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -60,7 +67,7 @@ class _SearchHomeState extends State<SearchHome> {
                   final book = books[index];
                   return ListTile(
                     leading: Image.asset(
-                      book.urlImage,
+                      book.image,
                       fit: BoxFit.cover,
                       width: 50,
                       height: 50,
@@ -69,7 +76,7 @@ class _SearchHomeState extends State<SearchHome> {
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => BookPage(book: book),
+                        builder: (context) => WalkHomePage(),
                       ),
                     ),
                   );

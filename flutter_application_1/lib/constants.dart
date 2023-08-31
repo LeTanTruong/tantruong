@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 final RegExp emailValidatorRegExp =
     RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
 // kENE "please Enter Valid email"
@@ -8,3 +10,4 @@ final RegExp emailValidatorRegExp =
 // kNNE "please Enter your name"
 // kPNNE "Please Enter your phone number"
 // KANE "please Enter your address"
+const kAppBar = Colors.orange;

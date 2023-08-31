@@ -11,8 +11,8 @@ class DrawerScreen extends StatelessWidget {
         children: [
           Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(20.0),
+              const Padding(
+                padding: EdgeInsets.all(20.0),
                 child: Text(
                   "Profile",
                   style: TextStyle(
@@ -21,15 +21,15 @@ class DrawerScreen extends StatelessWidget {
                       fontWeight: FontWeight.w400),
                 ),
               ), ////1
-              Divider(),
+              const Divider(),
 
               ListTile(
                 onTap: () {},
                 selectedColor: Colors.amber,
                 selected: true,
-                contentPadding: EdgeInsets.fromLTRB(20, 5, 20, 5),
-                leading: Icon(Icons.group),
-                title: Text(
+                contentPadding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+                leading: const Icon(Icons.group),
+                title: const Text(
                   "UserName",
                   style: TextStyle(fontSize: 20, color: Colors.blue),
                 ),
@@ -38,9 +38,9 @@ class DrawerScreen extends StatelessWidget {
                 onTap: () {},
                 selectedColor: Colors.amber,
                 selected: true,
-                contentPadding: EdgeInsets.fromLTRB(20, 5, 20, 5),
-                leading: Icon(Icons.group),
-                title: Text(
+                contentPadding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+                leading: const Icon(Icons.group),
+                title: const Text(
                   "UserEmail",
                   style: TextStyle(fontSize: 20, color: Colors.blue),
                 ),
@@ -49,9 +49,9 @@ class DrawerScreen extends StatelessWidget {
                 onTap: () {},
                 selectedColor: Colors.amber,
                 selected: true,
-                contentPadding: EdgeInsets.fromLTRB(20, 5, 20, 5),
-                leading: Icon(Icons.group),
-                title: Text(
+                contentPadding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+                leading: const Icon(Icons.group),
+                title: const Text(
                   "Groups",
                   style: TextStyle(fontSize: 20, color: Colors.blue),
                 ),
@@ -63,14 +63,15 @@ class DrawerScreen extends StatelessWidget {
                       context: context,
                       builder: (context) {
                         return AlertDialog(
-                          title: Text("Logout"),
-                          content: Text("Are you sure you want to logout?"),
+                          title: const Text("Logout"),
+                          content:
+                              const Text("Are you sure you want to logout?"),
                           actions: [
                             IconButton(
                               onPressed: (() {
                                 Navigator.pop(context);
                               }),
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.cancel,
                                 size: 30,
                                 color: Colors.blue,
@@ -81,10 +82,10 @@ class DrawerScreen extends StatelessWidget {
                                 await FirebaseAuth.instance.signOut();
                                 Navigator.pop(context);
                               }),
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.done,
                                 size: 30,
-                                color: const Color.fromARGB(255, 110, 243, 33),
+                                color: Color.fromARGB(255, 110, 243, 33),
                               ),
                             ),
                           ],
@@ -93,9 +94,9 @@ class DrawerScreen extends StatelessWidget {
                 },
                 selectedColor: Colors.amber,
                 selected: true,
-                contentPadding: EdgeInsets.fromLTRB(20, 5, 20, 5),
-                leading: Icon(Icons.exit_to_app),
-                title: Text(
+                contentPadding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+                leading: const Icon(Icons.exit_to_app),
+                title: const Text(
                   "Logout",
                   style: TextStyle(fontSize: 20, color: Colors.blue),
                 ),

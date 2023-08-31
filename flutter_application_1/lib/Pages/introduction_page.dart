@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/login_page.dart';
+import 'package:flutter_application_1/auth/page_auth/login_page.dart';
+import 'package:flutter_application_1/constants.dart';
 
 class IntroductionPage extends StatefulWidget {
   static const routerName = "/IntroductionPage.routerName";
@@ -10,7 +11,7 @@ class IntroductionPage extends StatefulWidget {
 }
 
 class _IntroductionPageState extends State<IntroductionPage> {
-  late PageController _pageController; ////4
+  late PageController _pageController;
   int active = 0;
   bool isLoading = false;
   @override
@@ -34,8 +35,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                   active = value;
                 });
               },
-              controller: _pageController, ////5
-
+              controller: _pageController,
               itemCount: dataList.length,
               itemBuilder: (context, index) {
                 return Container(
@@ -57,10 +57,10 @@ class _IntroductionPageState extends State<IntroductionPage> {
                       Expanded(
                         flex: 2,
                         child: Container(
-                          padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                          padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
                           child: Column(
                             children: [
-                              SizedBox(height: 50),
+                              const SizedBox(height: 50),
                               Opacity(
                                 opacity: active == dataList.length - 1 ? 1 : 0,
                                 child: ElevatedButton(
@@ -73,32 +73,30 @@ class _IntroductionPageState extends State<IntroductionPage> {
                                     );
                                   },
                                   style: ElevatedButton.styleFrom(
-                                      side: BorderSide(
-                                          width: 2, color: Colors.blue),
-                                      shape: RoundedRectangleBorder(
+                                      side: const BorderSide(
+                                          width: 2, color: Colors.black),
+                                      shape: const RoundedRectangleBorder(
                                         borderRadius: BorderRadius.all(
                                           Radius.circular(30),
                                         ),
                                       ),
-                                      minimumSize: Size(
+                                      minimumSize: const Size(
                                         200,
                                         50,
                                       ),
-                                      backgroundColor:
-                                          Color.fromARGB(255, 239, 255, 21),
+                                      backgroundColor: kAppBar,
                                       elevation: 0),
-                                  child: isLoading ////7
-                                      ? Center(
+                                  child: isLoading
+                                      ? const Center(
                                           child: CircularProgressIndicator(
                                             color: Colors.white,
                                           ),
                                         )
-                                      : Text(
+                                      : const Text(
                                           "Login",
                                           style: TextStyle(
-                                              fontSize: 25,
-                                              color:
-                                                  Color.fromARGB(255, 0, 0, 0)),
+                                              fontSize: 30,
+                                              color: Colors.white),
                                         ),
                                 ),
                               ),
@@ -110,7 +108,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                   ),
                 );
               },
-            ), ////
+            ),
             Positioned(
               bottom: 60,
               child: Row(
@@ -120,31 +118,31 @@ class _IntroductionPageState extends State<IntroductionPage> {
                     child: InkWell(
                       onTap: () {
                         _pageController.animateToPage(dataList.length - 1,
-                            duration: Duration(milliseconds: 300),
+                            duration: const Duration(milliseconds: 300),
                             curve: Curves.linear);
                       },
-                      child: Text(
+                      child: const Text(
                         "Skip",
                         style: TextStyle(
                             fontSize: 25,
-                            color: const Color.fromARGB(255, 0, 0, 0),
+                            color: Color.fromARGB(255, 0, 0, 0),
                             fontWeight: FontWeight.w500),
                       ),
                     ),
                   ),
-                  SizedBox(width: 50),
+                  const SizedBox(width: 50),
                   Row(
                     children: List.generate(
                       dataList.length,
                       (index) {
                         return AnimatedContainer(
-                          duration: Duration(milliseconds: 300),
-                          margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                          duration: const Duration(milliseconds: 300),
+                          margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
                           width: active == index ? 35 : 15,
                           height: 15,
                           decoration: BoxDecoration(
-                            color: active == index ? Colors.amber : Colors.blue,
-                            borderRadius: BorderRadius.all(
+                            color: active == index ? kAppBar : Colors.blue,
+                            borderRadius: const BorderRadius.all(
                               Radius.circular(50),
                             ),
                           ),
@@ -152,7 +150,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                       },
                     ),
                   ),
-                  SizedBox(width: 50),
+                  const SizedBox(width: 50),
                 ],
               ),
             ),

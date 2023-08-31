@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Pages/Bottom_Navigation_Bar_Screen.dart';
-import 'package:flutter_application_1/Pages/categorys/categoryWidget/category.dart';
+import 'package:flutter_application_1/Pages/bottom_navigation_bar_screen.dart';
+import 'package:flutter_application_1/Pages/categorys/category_page.dart';
 import 'package:flutter_application_1/Pages/Lists/List_Product_Special.dart';
-import 'package:flutter_application_1/Pages/homes/card.dart';
-import 'package:flutter_application_1/Pages/homes/home_category.dart';
+import 'package:flutter_application_1/Pages/Lists/list_card_page.dart';
 import 'package:flutter_application_1/Pages/homes/home_page.dart';
 import 'package:flutter_application_1/Pages/homes/searchs/search_home.dart';
-import 'package:flutter_application_1/Pages/walks/cart_buy_product.dart';
-import 'package:flutter_application_1/Pages/walks/cart_model.dart';
-import 'package:flutter_application_1/Pages/walks/details_product_page.dart';
+import 'package:flutter_application_1/Pages/products_detail/product_detail_page.dart';
+import 'package:flutter_application_1/Pages/products_detail/product_detail_provider/product_detail_provider.dart';
+import 'package:flutter_application_1/Pages/walks/walk_cart_buy_product.dart';
+import 'package:flutter_application_1/Pages/walks/walk_cart_model.dart';
+import 'package:flutter_application_1/Pages/walks/walk_details_product_page.dart';
 import 'package:flutter_application_1/Pages/walks/walk_home_page.dart';
 import 'package:flutter_application_1/Pages/introduction_page.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/complete_profile_page.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/forgot_password_page.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/login_page.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/sign_up_page.dart';
+import 'package:flutter_application_1/auth/page_auth/complete_profile_page.dart';
+import 'package:flutter_application_1/auth/page_auth/forgot_password_page.dart';
+import 'package:flutter_application_1/auth/page_auth/login_page.dart';
+import 'package:flutter_application_1/auth/page_auth/sign_up_page.dart';
 import 'package:flutter_application_1/providers/cart_provider.dart';
 import 'package:flutter_application_1/providers/category_provider.dart';
 import 'package:flutter_application_1/providers/order_provider.dart';
 import 'package:flutter_application_1/providers/product_provider.dart';
 import 'package:flutter_application_1/providers/slider_provider.dart';
-import 'package:flutter_application_1/widgets/drawer_screen.dart';
+import 'package:flutter_application_1/Pages/homes/widgets/drawer_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ProductProvider()),
         ChangeNotifierProvider(create: (_) => CartProvider()),
         ChangeNotifierProvider(create: (_) => OrderProvider()),
-        ChangeNotifierProvider(create: (_) => CartModel()),
+        ChangeNotifierProvider(create: (_) => WalkCartModel()),
+        ChangeNotifierProvider(create: (_) => ProductDetailProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -51,16 +53,15 @@ class MyApp extends StatelessWidget {
         routes: {
           HomePage.routerName: ((context) => HomePage()),
           CategoryPage.routerName: ((context) => CategoryPage()),
+          ProductDetailPage.routerName: ((context) => ProductDetailPage()),
           IntroductionPage.routerName: ((context) => IntroductionPage()),
-          HomeCategory.routerName: ((context) => HomeCategory()),
           DrawerScreen.routerName: ((context) => DrawerScreen()),
           BottomNavigationBarScreen.routerName: ((context) =>
               BottomNavigationBarScreen()),
           ////
           ListProductSpecial.routerName: ((context) => ListProductSpecial()),
-          PageCard.routerName: ((context) => PageCard()),
+          ListCartPage.routerName: ((context) => ListCartPage()),
           SearchHome.routerName: ((context) => SearchHome()),
-          //PageListOrder.routerName: (context) => PageListOrder(),
 
           ////
           CompleteProfile.routerName: ((context) => const CompleteProfile()),
@@ -69,9 +70,10 @@ class MyApp extends StatelessWidget {
           ForgotPasswordPage.routerName: ((context) =>
               const ForgotPasswordPage()),
           WalkHomePage.routerName: ((context) => const WalkHomePage()),
-          CartBuyProduct.routerName: ((context) => const CartBuyProduct()),
-          DetailsProductPage.routerName: ((context) =>
-              const DetailsProductPage()),
+          WalkCartBuyProduct.routerName: ((context) =>
+              const WalkCartBuyProduct()),
+          WalkDetailsProductPage.routerName: ((context) =>
+              const WalkDetailsProductPage()),
         },
       ),
     );

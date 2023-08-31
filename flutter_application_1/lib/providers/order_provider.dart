@@ -16,7 +16,7 @@ class OrderProvider extends ChangeNotifier {
     var data = [];
     items.forEach((key, value) {
       data.add({
-        "product_id": key, 
+        "product_id": key,
         "quantity": value.quantity,
       });
     });
@@ -65,5 +65,5 @@ class OrderProvider extends ChangeNotifier {
     } catch (e) {
       return Future.error(e);
     }
-  } ////2
+  }
 }

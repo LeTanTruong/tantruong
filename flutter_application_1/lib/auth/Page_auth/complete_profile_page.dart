@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Pages/Bottom_Navigation_Bar_Screen.dart';
-import 'package:flutter_application_1/Pages/homes/home_page.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/widgets/constants.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/widgets/form_error.dart';
+import 'package:flutter_application_1/Pages/bottom_navigation_bar_screen.dart';
+import 'package:flutter_application_1/auth/widgets/form_error.dart';
+import 'package:flutter_application_1/constants.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 class CompleteProfile extends StatefulWidget {
   static const routerName = "/CompleteProfile.routerName";
@@ -40,8 +40,13 @@ class _CompleteProfileState extends State<CompleteProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         centerTitle: true,
-        title: Text("CompleteProfile"),
+        backgroundColor: kAppBar,
+        title: const Text(
+          "CompleteProfile",
+          style: TextStyle(fontSize: 30),
+        ),
       ),
       body: Form(
         key: formKey,
@@ -52,16 +57,12 @@ class _CompleteProfileState extends State<CompleteProfile> {
               children: [
                 ////firstName
                 TextFormField(
-                  //keyboardType: TextInputType.emailAddress,
                   onSaved: (newValue) => firstName = newValue!,
                   // },
                   onChanged: (value) {
                     if (value.isNotEmpty) {
                       removeError(error: "please Enter your name");
                     }
-                    //  else if (emailValidatorRegExp.hasMatch(value)) {
-                    //   removeError(error: "please Enter Valid Email");
-                    // }
                     return null;
                   },
                   validator: (value) {
@@ -69,13 +70,9 @@ class _CompleteProfileState extends State<CompleteProfile> {
                       addError(error: "please Enter your name");
                       return "";
                     }
-                    // else if (!emailValidatorRegExp.hasMatch(value)) {
-                    //   addError(error: "please Enter Valid Email");
-                    //   return "";
-                    // }
                     return null;
                   },
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Color.fromARGB(255, 0, 0, 0),
@@ -102,32 +99,10 @@ class _CompleteProfileState extends State<CompleteProfile> {
                   ),
                 ),
                 //// lastName
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 TextFormField(
-                  //keyboardType: TextInputType.emailAddress,
                   onSaved: (newValue) => lastName = newValue!,
-
-                  // onChanged: (value) {
-                  //   if (value.isNotEmpty) {
-                  //     removeError(error: "please Enter your name");
-                  //   }
-                  //   //  else if (emailValidatorRegExp.hasMatch(value)) {
-                  //   //   removeError(error: "please Enter Valid Email");
-                  //   // }
-                  //   return null;
-                  // },
-                  // validator: (value) {
-                  //   if (value!.isEmpty) {
-                  //     addError(error: "please Enter your name");
-                  //     return "";
-                  //   }
-                  //   // else if (!emailValidatorRegExp.hasMatch(value)) {
-                  //   //   addError(error: "please Enter Valid Email");
-                  //   //   return "";
-                  //   // }
-                  //   return null;
-                  // },
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Color.fromARGB(255, 0, 0, 0),
@@ -154,31 +129,8 @@ class _CompleteProfileState extends State<CompleteProfile> {
                   ),
                 ),
                 ////phoneNumber
-                SizedBox(height: 20),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  onSaved: (newValue) => phoneNumber = newValue!,
-                  // },
-                  onChanged: (value) {
-                    if (value.isNotEmpty) {
-                      removeError(error: "Please Enter your phone number");
-                    }
-                    //  else if (emailValidatorRegExp.hasMatch(value)) {
-                    //   removeError(error: "please Enter Valid Email");
-                    // }
-                    return null;
-                  },
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      addError(error: "Please Enter your phone number");
-                      return "";
-                    }
-                    // else if (!emailValidatorRegExp.hasMatch(value)) {
-                    //   addError(error: "please Enter Valid Email");
-                    //   return "";
-                    // }
-                    return null;
-                  },
+                const SizedBox(height: 20),
+                const IntlPhoneField(
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -205,18 +157,13 @@ class _CompleteProfileState extends State<CompleteProfile> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 TextFormField(
-                  //keyboardType: TextInputType.emailAddress,
                   onSaved: (newValue) => address = newValue!,
-                  // },
                   onChanged: (value) {
                     if (value.isNotEmpty) {
                       removeError(error: "please Enter your address");
                     }
-                    //  else if (emailValidatorRegExp.hasMatch(value)) {
-                    //   removeError(error: "please Enter Valid Email");
-                    // }
                     return null;
                   },
                   validator: (value) {
@@ -224,13 +171,9 @@ class _CompleteProfileState extends State<CompleteProfile> {
                       addError(error: "please Enter your address");
                       return "";
                     }
-                    // else if (!emailValidatorRegExp.hasMatch(value)) {
-                    //   addError(error: "please Enter Valid Email");
-                    //   return "";
-                    // }
                     return null;
                   },
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Color.fromARGB(255, 0, 0, 0),
@@ -256,13 +199,12 @@ class _CompleteProfileState extends State<CompleteProfile> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 FormError(errors: errors),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: (() {
                     if (formKey.currentState!.validate()) {
-                      //formKey.currentState!.save();
                       Navigator.pushNamed(
                           context, BottomNavigationBarScreen.routerName);
                     }

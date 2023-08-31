@@ -1,7 +1,8 @@
+//\walks\walk_home_page.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Pages/walks/cart_buy_product.dart';
-import 'package:flutter_application_1/Pages/walks/cart_model.dart';
-import 'package:flutter_application_1/Pages/walks/details_product_page.dart';
+import 'package:flutter_application_1/Pages/walks/walk_cart_buy_product.dart';
+import 'package:flutter_application_1/Pages/walks/walk_cart_model.dart';
+import 'package:flutter_application_1/constants.dart';
 import 'package:provider/provider.dart';
 
 class WalkHomePage extends StatefulWidget {
@@ -18,15 +19,20 @@ class _WalkHomePageState extends State<WalkHomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          elevation: 0,
           centerTitle: true,
-          title: const Text("Walk Home Page"),
+          backgroundColor: kAppBar,
+          title: const Text(
+            "Walk Home Page",
+            style: TextStyle(fontSize: 30),
+          ),
         ), ////2
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               ////4
-              child: Consumer<CartModel>(
+              child: Consumer<WalkCartModel>(
                 builder: (context, value, child) {
                   return GridView.builder(
                     itemCount: value.shopItems.length,
@@ -37,25 +43,11 @@ class _WalkHomePageState extends State<WalkHomePage> {
                       childAspectRatio: 1 / 1.3,
                     ),
                     itemBuilder: ((context, index) {
-                      return
-                          // GroceryItemTile(
-                          //   itemName: value.shopItems[index][0],
-                          //   itemPrice: value.shopItems[index][1],
-                          //   imagePath: value.shopItems[index][2],
-                          //   color: value.shopItems[index][3],
-                          //   onPressed:
-                          //() {
-                          //     Provider.of<CartModel>(context, listen: false)
-                          //         .addItemToCart(index);
-                          //   },
-                          // );
-                          ////
-                          Padding(
+                      return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
                           decoration: BoxDecoration(
                             color: value.shopItems[index]["color"],
-                            //[3],
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Column(
@@ -65,80 +57,40 @@ class _WalkHomePageState extends State<WalkHomePage> {
                                 flex: 2,
                                 child: Image.asset(
                                   value.shopItems[index]["image"],
-                                  //[2],
                                   fit: BoxFit.cover,
-                                  // height: 150,
-                                  // width: 150,
                                 ),
                               ),
                               const SizedBox(height: 10),
                               ////Tên sản phẩm
                               Text(
                                 value.shopItems[index]["name"],
-                                //[0],
                               ),
                               const SizedBox(height: 10),
                               InkWell(
                                   onTap: () {
-                                    Navigator.pushNamed(
-                                        context, DetailsProductPage.routerName,
-                                        arguments: {
-                                          value.shopItems[index]["name"],
-                                          //[0],
-                                          value.shopItems[index]["price"],
-                                          //[1],
-                                          value.shopItems[index]["image"],
-                                          //[2],
-                                          value.shopItems[index]["color"],
-                                          //[3],
-                                        });
+                                    Navigator.of(context, rootNavigator: true)
+                                        .pushNamed(
+                                      "/WalkDetailsProductPage.routerName",
+                                      arguments: value.shopItems[index],
+                                    );
                                   },
-                                  child: Text("Chi tiết")),
-                              ////giá tiền
-                              //// MaterialButton nút vật liệu
+                                  child: const Text("Chi tiết")),
+                              ////
                               MaterialButton(
                                 onPressed: () {
-                                  Provider.of<CartModel>(context, listen: false)
+                                  Provider.of<WalkCartModel>(context,
+                                          listen: false)
                                       .addItemToCart(index);
                                 },
                                 color: value.shopItems[index]["color"],
-                                //[3],
                                 child: Text(
-                                  "take ${value.shopItems[index]["price"]
-                                  //[1]
-                                  }",
+                                  "take ${value.shopItems[index]["price"]}",
                                   style: const TextStyle(
                                     color: Colors.black,
                                     fontSize: 13,
                                   ),
                                 ),
                               ),
-                              // InkWell(
-                              //   onTap: () {
-                              //     Provider.of<CartModel>(context, listen: false)
-                              //         .addItemToCart(index);
-                              //   },
-                              //   child: Container(
-                              //     //margin: EdgeInsets.all(20),
-                              //     width: 100,
-                              //     height: 50,
-                              //     decoration: BoxDecoration(
-                              //         color: value.shopItems[index][3],
-                              //         border: Border.all(
-                              //             width: 2, color: Colors.black),
-                              //         borderRadius: BorderRadius.circular(20)),
-                              //     child: Center(
-                              //       child: Text(
-                              //         "take ${value.shopItems[index][1]}",
-                              //         style: TextStyle(
-                              //           color: Colors.black,
-                              //           fontSize: 13,
-                              //         ),
-                              //         //textAlign: TextAlign.center,
-                              //       ),
-                              //     ),
-                              //   ),
-                              // ),
                             ],
                           ),
                         ),
@@ -156,11 +108,11 @@ class _WalkHomePageState extends State<WalkHomePage> {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return const CartBuyProduct();
+                return const WalkCartBuyProduct();
               },
             ),
           ),
-          backgroundColor: Colors.orange,
+          backgroundColor: kAppBar,
           child: const Icon(Icons.shopping_cart),
         ),
       ),

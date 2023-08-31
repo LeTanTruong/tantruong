@@ -22,13 +22,13 @@ class CategoryProvider extends ChangeNotifier {
     final url =
         'https://apiforlearning.zendvn.com/api/mobile/categories/$id/products';
     final uri = Uri.parse(url);
-    final finalUri = uri.replace(queryParameters: {}); //"special": "true"
+    final finalUri = uri.replace(queryParameters: {});
 
     try {
       final response = await http.get(finalUri);
       final jsonData = jsonDecode(response.body);
       List<Product> data = List<Product>.from(
-              jsonData.map((Product) => Product.fromJson(jsonEncode(Product))))
+              jsonData.map((product) => Product.fromJson(jsonEncode(product))))
           .toList();
       return data;
     } catch (e) {

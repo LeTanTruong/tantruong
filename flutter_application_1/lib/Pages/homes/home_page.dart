@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Pages/homes/home_category.dart';
 import 'package:flutter_application_1/Pages/homes/home_slider.dart';
-import 'package:flutter_application_1/Pages/homes/searchs/search_home.dart';
-import 'package:flutter_application_1/widgets/drawer_screen.dart';
+import 'package:flutter_application_1/Pages/homes/widgets/drawer_screen.dart';
 
-/////////////////////////////////////////////
 class HomePage extends StatefulWidget {
   static const routerName = "/HomePage.routerName";
   const HomePage({Key? key}) : super(key: key);
@@ -16,54 +14,88 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: true,
-        centerTitle: true,
-        title: const Text("HomePage"),
-      ),
-      drawer: const DrawerScreen(),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              SizedBox(height: 10),
-              GestureDetector(
-                onTap: () {
-                  //Navigator.of(context).pushNamed("/SearchHome.routerName");
-                  Navigator.of(context, rootNavigator: true)
-                      .pushReplacementNamed("/SearchHome.routerName");
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 60,
-                  child: Image.asset(
-                    "assets/images/sea.png",
-                    fit: BoxFit.cover,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          automaticallyImplyLeading: true,
+          centerTitle: true,
+          backgroundColor: Colors.orange,
+          title: const Text(
+            "HomePage",
+            style: TextStyle(fontSize: 30),
+          ),
+        ),
+        drawer: const DrawerScreen(),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              children: [
+                const SizedBox(height: 10),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context, rootNavigator: true)
+                        .pushReplacementNamed("/SearchHome.routerName");
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 60,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            width: 1, color: Color.fromARGB(255, 82, 81, 81)),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.arrow_back,
+                                color: Color.fromARGB(255, 82, 81, 81),
+                              ),
+                              SizedBox(width: 10),
+                              Text(
+                                "search",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: Color.fromARGB(255, 82, 81, 81)),
+                              ),
+                            ],
+                          ),
+                          Icon(
+                            Icons.clear,
+                            color: Color.fromARGB(255, 82, 81, 81),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 10),
-              HomeSlider(),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(child: Text("Danh mục sản phẩm")),
-                    Text("Tất cả (4)"),
-                  ],
+                const SizedBox(height: 20),
+                const HomeSlider(),
+                const SizedBox(
+                  height: 10,
                 ),
-              ),
-              SizedBox(height: 10),
-              HomeCategory(),
-              SizedBox(height: 10),
-            ],
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(child: Text("Danh mục sản phẩm")),
+                      Text("Tất cả (4)"),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 10),
+                const HomeCategory(),
+                const SizedBox(height: 10),
+              ],
+            ),
           ),
         ),
       ),

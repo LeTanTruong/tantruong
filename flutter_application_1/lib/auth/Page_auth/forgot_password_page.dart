@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/login_page.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/sign_up_page.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/widgets/constants.dart';
-import 'package:flutter_application_1/auth/Page_auth/auth/widgets/form_error.dart';
+import 'package:flutter_application_1/auth/page_auth/login_page.dart';
+import 'package:flutter_application_1/auth/page_auth/sign_up_page.dart';
+import 'package:flutter_application_1/auth/widgets/form_error.dart';
+import 'package:flutter_application_1/constants.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   static const routerName = "/ForgotPasswordPage.routerName";
@@ -14,7 +14,6 @@ class ForgotPasswordPage extends StatefulWidget {
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   final formKey = GlobalKey<FormState>();
-  //List<String> errors = [];
   final List<String> errors = [];
 
   void addError({required String error}) {
@@ -38,14 +37,13 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        //  backgroundColor: Colors.white,
         appBar: AppBar(
           centerTitle: true,
-          //backgroundColor: Colors.white,
           elevation: 0,
-          title: Text(
+          backgroundColor: kAppBar,
+          title: const Text(
             "Forgot Password",
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(fontSize: 30),
           ),
         ),
         body: Form(
@@ -77,7 +75,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       }
                       return null;
                     },
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: Color.fromARGB(255, 0, 0, 0),
@@ -98,14 +96,14 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       hintText: "Enter your Email",
                       prefixIcon: Icon(
                         Icons.email,
-                        color: Colors.amber,
+                        color: kAppBar,
                         size: 20,
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   FormError(errors: errors),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   //// login sign In
                   ElevatedButton(
                     onPressed: (() {
@@ -125,19 +123,19 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                         ),
                         backgroundColor: const Color.fromARGB(255, 7, 156, 255),
                         elevation: 0),
-                    child: Text(
+                    child: const Text(
                       'Continue',
                       style: TextStyle(
                           fontSize: 25,
                           color: Color.fromARGB(255, 255, 255, 255)),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 ////
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Don't have an account?",
                         style: TextStyle(fontSize: 20),
                       ),
@@ -145,11 +143,11 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                         onTap: () {
                           Navigator.pushNamed(context, SignUpPage.routerName);
                         },
-                        child: Text(
+                        child: const Text(
                           "Sign Up",
                           style: TextStyle(
                               fontSize: 20,
-                              color: Colors.orange,
+                              color: kAppBar,
                               fontWeight: FontWeight.w600),
                         ),
                       ),

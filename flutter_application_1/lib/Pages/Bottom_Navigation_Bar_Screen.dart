@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Pages/Lists/List_Product_Special.dart';
-import 'package:flutter_application_1/Pages/homes/home_page.dart';
-import 'package:flutter_application_1/Pages/walks/walk_home_page.dart';
+import 'package:flutter_application_1/pages/Lists/list_product_special.dart';
+import 'package:flutter_application_1/pages/homes/home_page.dart';
+import 'package:flutter_application_1/pages/walks/walk_home_page.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
@@ -59,7 +59,6 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   @override
   Widget build(BuildContext context) {
     return PersistentTabView(
-      ////5
       context,
       controller: _controller,
       screens: _buildScreens(),

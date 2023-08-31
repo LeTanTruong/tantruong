@@ -3,7 +3,6 @@ import 'package:flutter_application_1/providers/category_provider.dart';
 import 'package:provider/provider.dart';
 
 class HomeCategory extends StatefulWidget {
-  static const routerName = "/homeCategory.routerName";
   const HomeCategory({Key? key}) : super(key: key);
 
   @override
@@ -48,24 +47,20 @@ class _HomeCategoryState extends State<HomeCategory> {
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
                 onTap: () {
-                  // Navigator.pushNamed(context, CategoryPage.routerName,
-                  // arguments: {
-                  //   'id': categoryData[index].id,
-                  //   'name': categoryData[index].name,
-                  // }
-                  // );
-                  Navigator.of(context, rootNavigator: true)
-                      .pushNamed("/CategoryPage.routerName", arguments: {
-                    'id': categoryData[index].id,
-                    'name': categoryData[index].name,
-                  });
+                  Navigator.of(context, rootNavigator: true).pushNamed(
+                    "/CategoryPage.routerName",
+                    arguments: {
+                      'id': categoryData[index].id,
+                      'name': categoryData[index].name,
+                    },
+                  );
                 },
                 child: Column(
                   children: [
                     //////Container
                     Container(
-                      width: 80,
-                      height: 40,
+                      width: 80, //chiều rộng ô vuông của mục hay phần tử item
+                      height: 40, //chiều cao ô vuông của mục hay phần tử item
                       decoration: BoxDecoration(
                         boxShadow: [],
                         borderRadius: BorderRadius.circular(20),
