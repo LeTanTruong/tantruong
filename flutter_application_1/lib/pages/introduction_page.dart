@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/auths/auth_page.dart';
+import 'package:flutter_application_1/auth/page_auth/login_page.dart';
 import 'package:flutter_application_1/constants.dart';
 
-class PageIntroduction extends StatefulWidget {
-  static const routerName = "PageIntroduction.routerName";
-  const PageIntroduction({super.key});
+class IntroductionPage extends StatefulWidget {
+  static const routerName = "/IntroductionPage.routerName";
+  const IntroductionPage({super.key});
 
   @override
-  State<PageIntroduction> createState() => _PageIntroductionState();
+  State<IntroductionPage> createState() => _IntroductionPageState();
 }
 
-class _PageIntroductionState extends State<PageIntroduction> {
+class _IntroductionPageState extends State<IntroductionPage> {
   late PageController _pageController;
   int active = 0;
   bool isLoading = false;
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
     _pageController = PageController(initialPage: 0);
   }
@@ -67,15 +68,15 @@ class _PageIntroductionState extends State<PageIntroduction> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: ((_) => AuthPage()),
+                                        builder: ((_) => const LoginPage()),
                                       ),
                                     );
                                   },
                                   style: ElevatedButton.styleFrom(
                                       side: const BorderSide(
                                           width: 2,
-                                          color:
-                                              Color.fromARGB(255, 77, 255, 7)),
+                                          color: Color.fromARGB(
+                                              255, 48, 241, 255)),
                                       shape: const RoundedRectangleBorder(
                                         borderRadius: BorderRadius.all(
                                           Radius.circular(30),
@@ -85,7 +86,7 @@ class _PageIntroductionState extends State<PageIntroduction> {
                                         200,
                                         50,
                                       ),
-                                      backgroundColor: kOrange,
+                                      backgroundColor: kAppBar,
                                       elevation: 0),
                                   child: isLoading
                                       ? const Center(
@@ -126,7 +127,7 @@ class _PageIntroductionState extends State<PageIntroduction> {
                         "Skip",
                         style: TextStyle(
                             fontSize: 25,
-                            color: Color.fromARGB(255, 0, 0, 0),
+                            color: Color.fromARGB(255, 49, 255, 238),
                             fontWeight: FontWeight.w500),
                       ),
                     ),
@@ -142,7 +143,7 @@ class _PageIntroductionState extends State<PageIntroduction> {
                           width: active == index ? 35 : 15,
                           height: 15,
                           decoration: BoxDecoration(
-                            color: active == index ? kOrange : Colors.blue,
+                            color: active == index ? kAppBar : Colors.blue,
                             borderRadius: const BorderRadius.all(
                               Radius.circular(50),
                             ),
@@ -155,7 +156,7 @@ class _PageIntroductionState extends State<PageIntroduction> {
                 ],
               ),
             ),
-////
+            ////Positioned
           ],
         ),
       ),
